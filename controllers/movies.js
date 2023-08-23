@@ -48,6 +48,7 @@ const addMovie = (req, res, next) => {
 
 const deleteMovie = (req, res, next) => {
   const { movieId } = req.params._id;
+  // const { userId } = req.user._id;
   Movie.findById(movieId)
     .then((movie) => {
       if (!movie) {

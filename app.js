@@ -6,7 +6,7 @@ const { errors } = require('celebrate');
 require('dotenv').config();
 
 const userRoutes = require('./routes/users');
-const cardRoutes = require('./routes/movies');
+const movieRoutes = require('./routes/movies');
 const { login, createUser } = require('./controllers/users');
 const { auth } = require('./middlewares/auth');
 const { handleErrors } = require('./middlewares/errors');
@@ -64,7 +64,7 @@ app.post('/signup', registerValidation, createUser);
 app.use(auth);
 
 app.use('/users', userRoutes);
-app.use('/cards', cardRoutes);
+app.use('/movies', movieRoutes);
 
 app.use(errors());
 

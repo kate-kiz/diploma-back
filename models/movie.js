@@ -16,7 +16,7 @@ const movieSchema = new mongoose.Schema(
       required: true,
     },
     year: {
-      type: Number,
+      type: String,
       required: true,
     },
     description: {
@@ -57,8 +57,7 @@ const movieSchema = new mongoose.Schema(
       },
     },
     movieId: {
-      type: mongoose.Schema.Types.Number,
-      ref: 'user',
+      type: Number,
       required: true,
     },
     owner: {
@@ -69,12 +68,12 @@ const movieSchema = new mongoose.Schema(
     nameRU: {
       type: String,
       required: true,
-      match: /^[А-ЯЁа-яё0-9\s]+$/,
+      // match: /^[А-ЯЁа-яё0-9\s]+$/,
     },
     nameEN: {
       type: String,
       required: true,
-      match: /^[A-Za-z0-9\s]+$/,
+      // match: /^[A-Za-z0-9\s]+$/,
     },
   },
   { versionKey: false },
